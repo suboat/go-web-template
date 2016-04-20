@@ -1,0 +1,17 @@
+package goresponse
+
+const (
+	STATUS_CODE_OK      = 200 // OK - [GET]
+	STATUS_CODE_CREATED = 201 // CREATED - [POST/PUT/PATCH]
+	STATUS_CODE_ACCEPT  = 202 // Accepted - [*]
+
+	STATUS_CODE_INVALID_REQUEST      = 400 // INVALID REQUEST - [POST/PUT/PATCH]
+	STATUS_CODE_UNAUTHORIZED         = 401 // Unauthorized - [*]
+	STATUS_CODE_FORBIDDEN            = 403 // Forbidden - [*]
+	STATUS_CODE_NOT_FOUND            = 404 // NOT FOUND - [*]
+	STATUS_CODE_NOT_ACCEPTABLE       = 406 // Not Acceptable - [GET]
+	STATUS_CODE_GONE                 = 410 // Gone -[GET]
+	STATUS_CODE_UNPROCESSABLE_ENTITY = 422 // Unprocessable Entity - [POST/PUT/PATCH]
+
+	STATUS_CODE_INTERNAL_SERVER_ERROR = 500 // INTERNAL SERVER ERROR - [*]
+)
