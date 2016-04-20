@@ -14,6 +14,14 @@ func NewState() *State {
 	}
 }
 
+func NewStateCS(status int) *State {
+	return NewState().CS(status)
+}
+
+func NewStateSuccess() *State {
+	return NewState().Success()
+}
+
 // 设置执行码
 func (c *State) C(code int) *State {
 	c.Code = code
@@ -32,6 +40,14 @@ func (c *State) S(status int) *State {
 	return c
 }
 
+func (c *State) CS(status int) *State {
+	return c.C(status).S(status)
+}
+
 func (c *State) Success() *State {
 	return c.C(0).M(0).S(Status_success)
+}
+
+func (c *State) Ignore() *State {
+	return c.C(0).M(0).S(Status_ignore)
 }
