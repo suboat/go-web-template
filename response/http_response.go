@@ -3,7 +3,7 @@ package goresponse
 type HTTPResponse struct {
 	Tag    string      `json:"tag"`     // tag
 	Result bool        `json:"success"` // 请求是否成功处理
-	Code   *Code       `json:"code"`    // 执行码
+	State  *State      `json:"state"`   // 状态码
 	Meta   *Meta       `json:"meta"`    // 扩展元
 	Data   interface{} `json:"data"`    // 核心数据
 	Error  string      `json:"error"`   // 错误描述
@@ -12,23 +12,16 @@ type HTTPResponse struct {
 func NewHTTPResponse() *HTTPResponse {
 	return &HTTPResponse{
 		Result: false,
-		Code:   NewCode(),
+		State:  NewState(),
 		Meta:   nil,
 		Data:   "",
 		Error:  "",
 	}
 }
 
-// 设置执行码
-func (r *HTTPResponse) C(c *Code) *HTTPResponse {
-	r.Code = c
-	r.Result = r.IsSuccess()
-	return r
-}
-
 // 设置状态码
-func (r *HTTPResponse) S(s int) *HTTPResponse {
-	r.Code.S(s)
+func (r *HTTPResponse) S(s *State) *HTTPResponse {
+	r.State = s
 	r.Result = r.IsSuccess()
 	return r
 }
@@ -61,18 +54,19 @@ func (r *HTTPResponse) E(err error) *HTTPResponse {
 
 // 设置执行成功
 func (r *HTTPResponse) Success() *HTTPResponse {
-	r.S(Status_success).E(nil).Result = true
+	r.State.Success()
+	r.E(nil).Result = true
 	return r
 }
 
 func (r *HTTPResponse) IsSuccess() bool {
-	return (r.Code.Status == Status_success || r.Code.Status == Status_ignore)
+	return (r.State.Status == Status_success || r.State.Status == Status_ignore)
 }
 
 func (r *HTTPResponse) IsInvalidToken() bool {
-	return (r.Code.Status == Status_invalid_token)
+	return (r.State.Status == Status_invalid_token)
 }
 
 func (r *HTTPResponse) IsTimeoutToken() bool {
-	return (r.Code.Status == Status_token_timeout)
+	return (r.State.Status == Status_token_timeout)
 }
