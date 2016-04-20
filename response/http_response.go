@@ -1,78 +1,78 @@
 package goresponse
 
 type HTTPResponse struct {
-	Tag     string      `json:"tag"`
-	Success bool        `json:"success"`
-	Status  int         `json:"status"`
-	Code    *Code       `json:"code"`
-	Meta    *Meta       `json:"meta"`
-	Data    interface{} `json:"data"`
-	Error   string      `json:"error"`
+	Tag    string      `json:"tag"`
+	Result bool        `json:"success"`
+	Status int         `json:"status"`
+	Code   *Code       `json:"code"`
+	Meta   *Meta       `json:"meta"`
+	Data   interface{} `json:"data"`
+	Error  string      `json:"error"`
 }
 
 func NewHTTPResponse() *HTTPResponse {
 	return &HTTPResponse{
-		Success: false,
-		Status:  Status_fail,
-		Code:    NewCode(),
-		Meta:    nil,
-		Data:    "",
-		Error:   "",
+		Result: false,
+		Status: Status_fail,
+		Code:   NewCode(),
+		Meta:   nil,
+		Data:   "",
+		Error:  "",
 	}
 }
 
-func (this *HTTPResponse) S(s int) *HTTPResponse {
-	this.Status = s
-	this.Success = this.IsSuccess()
-	return this
+func (r *HTTPResponse) S(s int) *HTTPResponse {
+	r.Status = s
+	r.Result = r.IsSuccess()
+	return r
 }
 
-func (this *HTTPResponse) ME(m *Meta) *HTTPResponse {
+func (r *HTTPResponse) ME(m *Meta) *HTTPResponse {
 	if m != nil {
-		this.Meta = m
+		r.Meta = m
 	}
-	return this
+	return r
 }
 
-func (this *HTTPResponse) C(c int) *HTTPResponse {
-	this.Code.C(c)
-	return this
+func (r *HTTPResponse) C(c int) *HTTPResponse {
+	r.Code.C(c)
+	return r
 }
 
-func (this *HTTPResponse) M(m int) *HTTPResponse {
-	this.Code.M(m)
-	return this
+func (r *HTTPResponse) M(m int) *HTTPResponse {
+	r.Code.M(m)
+	return r
 }
 
-func (this *HTTPResponse) D(d interface{}) *HTTPResponse {
+func (r *HTTPResponse) D(d interface{}) *HTTPResponse {
 	if d != nil {
-		this.Data = d
+		r.Data = d
 	}
-	return this
+	return r
 }
 
-func (this *HTTPResponse) E(err error) *HTTPResponse {
+func (r *HTTPResponse) E(err error) *HTTPResponse {
 	if err != nil {
-		this.Error = err.Error()
+		r.Error = err.Error()
 	}
-	return this
+	return r
 }
 
-func (this *HTTPResponse) Success() *HTTPResponse {
-	this.Status = Status_success
-	this.Success = true
-	this.Error = ""
-	return this
+func (r *HTTPResponse) Success() *HTTPResponse {
+	r.Status = Status_success
+	r.Result = true
+	r.Error = ""
+	return r
 }
 
-func (this *HTTPResponse) IsSuccess() bool {
-	return (this.Status == Status_success || this.Status == Status_ignore)
+func (r *HTTPResponse) IsSuccess() bool {
+	return (r.Status == Status_success || r.Status == Status_ignore)
 }
 
-func (this *HTTPResponse) IsInvalidToken() bool {
-	return (this.Status == Status_invalid_token)
+func (r *HTTPResponse) IsInvalidToken() bool {
+	return (r.Status == Status_invalid_token)
 }
 
-func (this *HTTPResponse) IsTimeoutToken() bool {
-	return (this.Status == Status_token_timeout)
+func (r *HTTPResponse) IsTimeoutToken() bool {
+	return (r.Status == Status_token_timeout)
 }
