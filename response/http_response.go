@@ -3,7 +3,7 @@ package goresponse
 type HTTPResponse struct {
 	Tag    string      `json:"tag"`     // tag
 	Result bool        `json:"success"` // 请求是否成功处理
-	State  *State      `json:"state"`   // 状态码
+	State  *State      `json:"state"`   // 状态元
 	Meta   *Meta       `json:"meta"`    // 扩展元
 	Data   interface{} `json:"data"`    // 核心数据
 	Error  string      `json:"error"`   // 错误描述
@@ -19,7 +19,7 @@ func NewHTTPResponse() *HTTPResponse {
 	}
 }
 
-// 设置状态码
+// 设置状态元
 func (r *HTTPResponse) S(s *State) *HTTPResponse {
 	r.State = s
 	r.Result = r.IsSuccess()

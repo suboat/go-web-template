@@ -14,16 +14,19 @@ func NewState() *State {
 	}
 }
 
+// 设置执行码
 func (c *State) C(code int) *State {
 	c.Code = code
 	return c
 }
 
+// 设置执行描述码
 func (c *State) M(message int) *State {
 	c.Message = message
 	return c
 }
 
+// 设置状态码
 func (c *State) S(status int) *State {
 	c.Status = status
 	return c
