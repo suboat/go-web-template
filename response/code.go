@@ -6,7 +6,7 @@ type Code struct {
 }
 
 func NewCode() *Code {
-	return new(Code)
+	return &Code{Code: 0, Message: 0}
 }
 
 func (c *Code) C(code int) *Code {
