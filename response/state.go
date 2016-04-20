@@ -1,5 +1,11 @@
 package goresponse
 
+const (
+	DefaultStateCode    int = 1
+	DefaultStateMessage     = 0
+	DefaultStateStatus      = Status_fail
+)
+
 type State struct {
 	Code    int `json:"code"`    // 执行码
 	Message int `json:"message"` // 执行描述码
@@ -8,16 +14,16 @@ type State struct {
 
 func NewState() *State {
 	return &State{
-		Code:    1,
-		Message: 0,
-		Status:  Status_fail,
+		Code:    DefaultStateCode,
+		Message: DefaultStateMessage,
+		Status:  DefaultStateStatus,
 	}
 }
 
 func NewStateCS(status int) *State {
 	return &State{
 		Code:    status,
-		Message: 0,
+		Message: DefaultStateMessage,
 		Status:  status,
 	}
 }
@@ -25,7 +31,7 @@ func NewStateCS(status int) *State {
 func NewStateSuccess() *State {
 	return &State{
 		Code:    0,
-		Message: 0,
+		Message: DefaultStateMessage,
 		Status:  Status_success,
 	}
 }
