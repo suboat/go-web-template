@@ -1,22 +1,22 @@
 package goresponse
 
 type HTTPResponse struct {
-	Tag    string      `json:"tag"`     // tag
-	Result bool        `json:"success"` // 请求是否成功处理
-	State  *State      `json:"state"`   // 状态元
-	Meta   *Meta       `json:"meta"`    // 扩展元
-	Data   interface{} `json:"data"`    // 核心数据
-	Token  string      `json:"token"`   // 身份令牌
-	Error  string      `json:"error"`   // 错误描述
+	Tag     string      `json:"tag"`     // tag
+	Success bool        `json:"success"` // 请求是否成功处理
+	State   *State      `json:"state"`   // 状态元
+	Meta    *Meta       `json:"meta"`    // 扩展元
+	Data    interface{} `json:"data"`    // 核心数据
+	Token   string      `json:"token"`   // 身份令牌
+	Error   string      `json:"error"`   // 错误描述
 }
 
 func NewHTTPResponse() *HTTPResponse {
 	return &HTTPResponse{
-		Result: false,
-		State:  NewState(),
-		Meta:   nil,
-		Data:   "",
-		Error:  "",
+		Success: false,
+		State:   NewState(),
+		Meta:    nil,
+		Data:    "",
+		Error:   "",
 	}
 }
 
@@ -25,7 +25,7 @@ func (r *HTTPResponse) S(s *State) *HTTPResponse {
 	if s != nil {
 		r.State = s
 	}
-	r.Result = r.IsSuccess()
+	r.Success = r.IsSuccess()
 	return r
 }
 

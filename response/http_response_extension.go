@@ -3,14 +3,14 @@ package goresponse
 // 设置状态元的状态码
 func (r *HTTPResponse) SS(status int) *HTTPResponse {
 	r.State.S(status)
-	r.Result = r.IsSuccess()
+	r.Success = r.IsSuccess()
 	return r
 }
 
 // 设置执行成功
-func (r *HTTPResponse) Success() *HTTPResponse {
+func (r *HTTPResponse) Finish() *HTTPResponse {
 	r.State.Success()
-	r.E(nil).Result = true
+	r.E(nil).Success = true
 	return r
 }
 
