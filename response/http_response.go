@@ -76,7 +76,3 @@ func (this *HTTPResponse) IsInvalidToken() bool {
 func (this *HTTPResponse) IsTimeoutToken() bool {
 	return (this.Status == Status_token_timeout)
 }
-
-func (this *HTTPResponse) IsMathFail(s int) bool {
-	return (this.Status & s) != 0
-}
