@@ -5,3 +5,6 @@ Multiple web template styles
 
 ## ./response
 Template style of HTTP & WebSocket responses
+
+## ./token
+Template style of token
