@@ -15,11 +15,19 @@ func NewState() *State {
 }
 
 func NewStateCS(status int) *State {
-	return NewState().CS(status)
+	return &State{
+		Code:    status,
+		Message: 0,
+		Status:  status,
+	}
 }
 
 func NewStateSuccess() *State {
-	return NewState().Success()
+	return &State{
+		Code:    0,
+		Message: 0,
+		Status:  Status_success,
+	}
 }
 
 // 设置执行码
