@@ -6,7 +6,6 @@ type HTTPResponse struct {
 	State   *State      `json:"state"`   // 状态元
 	Meta    *Meta       `json:"meta"`    // 扩展元
 	Data    interface{} `json:"data"`    // 核心数据
-	Token   string      `json:"token"`   // 身份令牌
 	Error   string      `json:"error"`   // 错误描述
 }
 
@@ -42,12 +41,6 @@ func (r *HTTPResponse) D(d interface{}) *HTTPResponse {
 	if d != nil {
 		r.Data = d
 	}
-	return r
-}
-
-// 设置新身份令牌
-func (r *HTTPResponse) T(t string) *HTTPResponse {
-	r.Token = t
 	return r
 }
 
