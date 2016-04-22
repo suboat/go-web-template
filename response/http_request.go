@@ -8,20 +8,6 @@ const (
 	HeaderKeyLimit        = "Meta-Limit"
 )
 
-type MetaQuery struct {
-	Query string
-	Order string
-	Limit string
-}
-
-func NewMetaQuery(r *http.Request) *MetaQuery {
-	return &MetaQuery{
-		Query: GetMetaQuery(r),
-		Order: GetMetaOrder(r),
-		Limit: GetMetaLimit(r),
-	}
-}
-
 func getHTTPHeaderValue(r *http.Request, key string) string {
 	if r == nil {
 	} else if len(key) == 0 {
