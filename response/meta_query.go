@@ -16,3 +16,19 @@ func NewMetaQuery(r *http.Request) *MetaQuery {
 		Limit: GetMetaLimit(r),
 	}
 }
+
+func (m *MetaQuery) ValidQuery() bool {
+	return len(m.Query) != 0
+}
+
+func (m *MetaQuery) ValidOrder() bool {
+	return len(m.Order) != 0
+}
+
+func (m *MetaQuery) ValidLimit() bool {
+	return len(m.Limit) != 0
+}
+
+func (m *MetaQuery) Valid() bool {
+	return m.ValidQuery() || m.ValidOrder() || m.ValidLimit()
+}
