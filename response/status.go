@@ -17,9 +17,9 @@ const (
 	Status_fail_captcha             // 12 验证码错误
 	Status_fail_request             // 13 请求错误
 	status_fail_none0               // 14 (预留)
-	status_fail_none1               // 15 (预留)
-	status_fail_none2               // 16 (预留)
-	status_fail_none3               // 17 (预留)
+	Status_fail_query               // 15 query错误
+	Status_fail_order               // 16 order错误
+	Status_fail_limit               // 17 limit错误
 	status_fail_none4               // 18 (预留)
 	status_fail_none5               // 19 (预留)
 	Status_fail_arg0                // 20 第1个参数错误
