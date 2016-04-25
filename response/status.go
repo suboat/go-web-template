@@ -16,7 +16,7 @@ const (
 	Status_fail_sql                 // 11 数据错误
 	Status_fail_captcha             // 12 验证码错误
 	Status_fail_request             // 13 请求错误
-	status_fail_none0               // 14 (预留)
+	Status_fail_meta                // 14 meta错误
 	Status_fail_query               // 15 query错误
 	Status_fail_order               // 16 order错误
 	Status_fail_limit               // 17 limit错误
