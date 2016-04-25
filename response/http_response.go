@@ -29,9 +29,9 @@ func (r *HTTPResponse) S(s *State) *HTTPResponse {
 }
 
 // 设置扩展元
-func (r *HTTPResponse) ME(m *Meta) *HTTPResponse {
+func (r *HTTPResponse) ME(m *MetaQuery) *HTTPResponse {
 	if m != nil {
-		r.Meta = m
+		r.Meta = &m.Meta
 	}
 	return r
 }

@@ -4,9 +4,11 @@ import "net/http"
 
 const (
 	HeaderKeyQuery string = "Meta-Query"
-	HeaderKeyOrder        = "Meta-Order"
-	HeaderKeyLimit        = "Meta-Limit"
 )
+
+func HEAD_QUERY_KEY() string {
+	return HeaderKeyQuery
+}
 
 func getHTTPHeaderValue(r *http.Request, key string) string {
 	if r == nil {
@@ -20,12 +22,4 @@ func getHTTPHeaderValue(r *http.Request, key string) string {
 
 func GetMetaQuery(r *http.Request) string {
 	return getHTTPHeaderValue(r, HeaderKeyQuery)
-}
-
-func GetMetaOrder(r *http.Request) string {
-	return getHTTPHeaderValue(r, HeaderKeyOrder)
-}
-
-func GetMetaLimit(r *http.Request) string {
-	return getHTTPHeaderValue(r, HeaderKeyLimit)
 }
