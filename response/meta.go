@@ -3,11 +3,12 @@ package goresponse
 type Meta struct {
 	Limit int   `json:"limit"` // 限制数
 	Skip  int   `json:"skip"`  // 忽略数
+	Page  int   `json:"page"`  // 页数
 	Total int64 `json:"total"` // 总数
 }
 
-func NewMeta(lmt, skip int) *Meta {
-	return &Meta{Limit: lmt, Skip: skip}
+func NewMeta() *Meta {
+	return new(Meta)
 }
 
 // 设置限制数
@@ -20,6 +21,16 @@ func (m *Meta) L(lmt int) *Meta {
 func (m *Meta) S(skip int) *Meta {
 	m.Skip = skip
 	return m
+}
+
+// 设置页数
+func (m *Meta) P(page int) *Meta {
+	m.Page = page
+	return m
+}
+
+func (m *Meta) LSP(lmt, skip, page int) *Meta {
+	return m.L(lmt).S(skip).P(page)
 }
 
 // 设置总数
