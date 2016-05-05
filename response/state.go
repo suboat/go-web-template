@@ -36,6 +36,14 @@ func NewStateSuccess() *State {
 	}
 }
 
+func NewStateIgnore() *State {
+	return &State{
+		Code:    0,
+		Message: DefaultStateMessage,
+		Status:  Status_ignore,
+	}
+}
+
 // 设置执行码
 func (c *State) C(code int) *State {
 	c.Code = code
