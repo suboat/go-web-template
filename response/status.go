@@ -4,8 +4,8 @@ const Status_ignore int = -1 // -1 忽略
 const (
 	Status_fail          int = iota // 0 失败
 	Status_success                  // 1 成功
-	Status_invalid_id               // 2 无效id
-	Status_invalid_user             // 3 无效用户
+	Status_invalid_user             // 2 无效用户
+	Status_inactive_user            // 3 未激活用户
 	Status_invalid_token            // 4 无效token
 	Status_token_timeout            // 5 token超时
 	Status_no_permission            // 6 无权限
