@@ -7,6 +7,12 @@ func (r *HTTPResponse) SS(status int) *HTTPResponse {
 	return r
 }
 
+func (r *HTTPResponse) SF() *HTTPResponse {
+	r.State.S(Status_fail)
+	r.Success = false
+	return r
+}
+
 // 设置执行成功
 func (r *HTTPResponse) Finish() *HTTPResponse {
 	r.State.Success()
