@@ -20,7 +20,7 @@ const (
 	Status_fail_query               // 15 query错误
 	Status_fail_order               // 16 order错误
 	Status_fail_limit               // 17 limit错误
-	status_fail_none4               // 18 (预留)
+	Status_fail_illegal             // 18 非用户拥有
 	status_fail_none5               // 19 (预留)
 	Status_fail_arg0                // 20 第1个参数错误
 	Status_fail_arg1                // 21 第2个参数错误
