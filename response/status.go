@@ -34,3 +34,7 @@ const (
 	Status_fail_arg9                // 29 第10个参数错误
 	Status_fail_arg                 // 30 参数错误
 )
+
+const (
+	Status_service_close int = 500 // 500 服务器关闭
+)
