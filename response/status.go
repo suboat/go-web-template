@@ -42,3 +42,7 @@ const (
 const (
 	Status_service_close int = 500 // 500 服务器关闭
 )
+
+const (
+	Status_out_workday int = 601 // 601 非工作时间
+)
