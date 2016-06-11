@@ -36,5 +36,9 @@ const (
 )
 
 const (
+	Status_forbidden = 403 // 403 服务拒绝
+)
+
+const (
 	Status_service_close int = 500 // 500 服务器关闭
 )
