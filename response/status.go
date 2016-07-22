@@ -1,4 +1,4 @@
-package goresponse
+package response
 
 const Status_ignore int = -1 // -1 忽略
 const (

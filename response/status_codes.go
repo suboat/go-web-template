@@ -1,4 +1,4 @@
-package goresponse
+package response
 
 const (
 	STATUS_CODE_OK      = 200 // OK - [GET]

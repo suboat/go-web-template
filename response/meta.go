@@ -1,4 +1,4 @@
-package goresponse
+package response
 
 type Meta struct {
 	Limit int   `json:"limit"` // 限制数

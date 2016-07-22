@@ -1,4 +1,4 @@
-package goresponse
+package response
 
 type HTTPResponse struct {
 	Tag     string      `json:"tag"`     // tag

@@ -1,4 +1,4 @@
-package goresponse
+package response
 
 // 设置状态元的状态码
 func (r *HTTPResponse) SS(status int) *HTTPResponse {
