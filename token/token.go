@@ -1,4 +1,4 @@
-package gotoken
+package token
 
 type IToken interface {
 	Valid() bool
