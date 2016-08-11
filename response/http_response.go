@@ -14,7 +14,7 @@ func NewHTTPResponse() *HTTPResponse {
 		Success: false,
 		State:   NewState(),
 		Meta:    nil,
-		Data:    "",
+		Data:    nil,
 		Error:   "",
 	}
 }
