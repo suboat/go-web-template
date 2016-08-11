@@ -33,3 +33,6 @@ Template style of HTTP & WebSocket responses
 * 28 第9个参数错误
 * 29 第10个参数错误
 * 30 参数错误
+* 403 服务拒绝
+* 500 服务器关闭
+* 601 非工作时间
