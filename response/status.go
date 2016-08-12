@@ -33,6 +33,15 @@ const (
 	Status_fail_arg8                // 28 第9个参数错误
 	Status_fail_arg9                // 29 第10个参数错误
 	Status_fail_arg                 // 30 参数错误
+	Status_fail_arg11               // 31 第11个参数错误
+	Status_fail_arg12               // 32 第12个参数错误
+	Status_fail_arg13               // 33 第13个参数错误
+	Status_fail_arg14               // 34 第14个参数错误
+	Status_fail_arg15               // 35 第15个参数错误
+	Status_fail_arg16               // 36 第16个参数错误
+	Status_fail_arg17               // 37 第17个参数错误
+	Status_fail_arg18               // 38 第18个参数错误
+	Status_fail_arg19               // 39 第19个参数错误
 )
 
 const (
