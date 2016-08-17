@@ -13,6 +13,12 @@ func (r *HTTPResponse) SF() *HTTPResponse {
 	return r
 }
 
+func (r *HTTPResponse) SFF() *HTTPResponse {
+	r.State.S(Status_fail_frequently)
+	r.Success = false
+	return r
+}
+
 // 设置执行成功
 func (r *HTTPResponse) Finish() *HTTPResponse {
 	r.State.Success()
