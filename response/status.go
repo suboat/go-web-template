@@ -6,8 +6,8 @@ const (
 	Status_success                    // 1 成功
 	Status_invalid_user               // 2 无效用户
 	Status_inactive_user              // 3 未激活用户
-	Status_invalid_token              // 4 无效token
-	Status_token_timeout              // 5 token超时
+	Status_invalid_token              // 4 token超时
+	Status_abandoned_token            // 5 token变更
 	Status_no_permission              // 6 无权限
 	Status_no_data                    // 7 无数据
 	Status_disuse                     // 8 无用
