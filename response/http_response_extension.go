@@ -35,5 +35,5 @@ func (r *HTTPResponse) IsInvalidToken() bool {
 }
 
 func (r *HTTPResponse) IsTimeoutToken() bool {
-	return (r.State.Status == Status_token_timeout)
+	return (r.State.Status == Status_invalid_token)
 }
