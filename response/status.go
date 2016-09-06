@@ -52,6 +52,16 @@ const (
 	Status_fail_arg27                 // 47 第27个参数错误
 	Status_fail_arg28                 // 48 第28个参数错误
 	Status_fail_arg29                 // 49 第29个参数错误
+	Status_fail_arg30                 // 50 第30个参数错误
+	Status_fail_arg31                 // 51 第31个参数错误
+	Status_fail_arg32                 // 52 第32个参数错误
+	Status_fail_arg33                 // 53 第33个参数错误
+	Status_fail_arg34                 // 54 第34个参数错误
+	Status_fail_arg35                 // 55 第35个参数错误
+	Status_fail_arg36                 // 56 第36个参数错误
+	Status_fail_arg37                 // 57 第37个参数错误
+	Status_fail_arg38                 // 58 第38个参数错误
+	Status_fail_arg39                 // 59 第39个参数错误
 )
 
 const (
